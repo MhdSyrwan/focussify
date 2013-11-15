@@ -2,7 +2,7 @@
 
   function getGlobalSiblings($el) {
     var $collection = $el.siblings();
-    while (!$el.parent().hasClass('main-page-content') && $el.parent.length > 0) {
+    while (!$el.parent().hasClass('main-page-content') && $el.parent().length > 0) {
       $el = $el.parent();
       $collection = $collection.add($el.siblings());
     }
@@ -11,13 +11,14 @@
 
   function setFocus($el, foggy_options) {
     $collection = getGlobalSiblings($el);
-    $el.css({'z-index': 101})
-    $collection.foggy(foggy_options);
     $el.css({
         'box-shadow': '0px 0px 10px white',
         '-moz-box-shadow': '0px 0px 10px white',
-        '-webkit-box-shadow': '0px 0px 10px white'
+        '-webkit-box-shadow': '0px 0px 10px white',
+        'position': 'relative',
+        'z-index': 101
     })
+    $collection.foggy(foggy_options);
     $('.focussify-darken-layer').show();
   }
 
@@ -27,7 +28,9 @@
     $el.css({
         'box-shadow': 'initial',
         '-moz-box-shadow': 'initial',
-        '-webkit-box-shadow': 'initial'
+        '-webkit-box-shadow': 'initial',
+        'z-index': 'initial',
+        'position': 'initial'
     })
     $('.focussify-darken-layer').hide();
     $el.css({'z-index': 'initial'})
