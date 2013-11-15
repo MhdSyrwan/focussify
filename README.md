@@ -6,7 +6,7 @@ a jquery plugin that blurs all screen except the element you want to focus on.
 Requirements
 -----------
 * jQuery
-* [Foggy jQuery plugin] (https://github.com/nbartlomiej/foggy)
+* [Foggy jQuery plugin] (http://nbartlomiej.github.io/foggy/)
 
 
 Usage
