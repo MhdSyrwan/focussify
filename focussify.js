@@ -9,10 +9,10 @@
     return $collection;
   }
 
-  function setFocus($el) {
+  function setFocus($el, foggy_options) {
     $collection = getGlobalSiblings($el);
     $el.css({'z-index': 101})
-    $collection.foggy({ cssFilterSupport: true });
+    $collection.foggy(foggy_options);
     $('.focussify-darken-layer').show();
   }
 
@@ -27,7 +27,8 @@
     var settings;
     settings = $.extend({ //default settings
       opacity: 0.6,
-      tent_color: 'black'
+      tent_color: 'black',
+      foggy_options: {cssFilterSupport: true}
     }, options);
 
     if (!$('.focussify-darken-layer').length) {
@@ -52,7 +53,7 @@
       }
     } else {
       if (!this.data('focussed')) { // checking if already focussed
-        setFocus(this);
+        setFocus(this, settings.foggy_options);
         this.data('focussed', true) // turning focussed flag on
       }else {
         console.warn('[jQuery.focussify]: Element is already focuseed !')
