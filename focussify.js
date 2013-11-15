@@ -13,12 +13,22 @@
     $collection = getGlobalSiblings($el);
     $el.css({'z-index': 101})
     $collection.foggy(foggy_options);
+    $el.css({
+        'box-shadow': '0px 0px 10px white',
+        '-moz-box-shadow': '0px 0px 10px white',
+        '-webkit-box-shadow': '0px 0px 10px white'
+    })
     $('.focussify-darken-layer').show();
   }
 
   function clearFocus($el) {
     $collection = getGlobalSiblings($el);
     $collection.foggy(false);
+    $el.css({
+        'box-shadow': 'initial',
+        '-moz-box-shadow': 'initial',
+        '-webkit-box-shadow': 'initial'
+    })
     $('.focussify-darken-layer').hide();
     $el.css({'z-index': 'initial'})
   }   
@@ -41,7 +51,7 @@
         'background-color': settings.tent_color,
         opacity: settings.opacity.toString(),
         display: 'none',
-        'z-index': '99',
+        'z-index': '99'
       }).appendTo($("body"));
     }
     if (options == false) {
