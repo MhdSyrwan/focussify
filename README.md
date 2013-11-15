@@ -17,6 +17,11 @@ Usage
 $("#myElement").focussify({
   opacity: 0.6 // dark layer opacity (optional)
   tent_color: 'black' // dark layer color name (optional)
+  foggy_options: { // options for foggy plugin (optional)
+     blurRadius: 2,          // In pixels.
+     opacity: 0.8,           // Falls back to a filter for IE.
+     cssFilterSupport: true  // Use "-webkit-filter" where available.
+  }
 });
 
 // defocus an element
