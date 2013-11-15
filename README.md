@@ -10,8 +10,8 @@ Usage
 ```javascript
 // focus on an element
 $("#myElement").focussify({
-  opacity: 0.6 // dark layer opacity
-  tent_color: 'black' // dark layer color name
+  opacity: 0.6 // dark layer opacity (optional)
+  tent_color: 'black' // dark layer color name (optional)
 });
 
 // defocus an element
