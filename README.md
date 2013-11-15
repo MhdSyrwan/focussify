@@ -9,7 +9,10 @@ Usage
 
 ```javascript
 // focus on an element
-$("#myElement").focussify();
+$("#myElement").focussify({
+  opacity: 0.6 // dark layer opacity
+  tent_color: 'black' // dark layer color name
+});
 
 // defocus an element
 $("#myElement").focussify(false);
